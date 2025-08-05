@@ -1,0 +1,91 @@
+[project]
+name = "Project Name"
+version = "0.1.0"
+description = ""
+authors = [{ name = "Your Name", email = "you@example.com" }]
+license = "MIT"
+readme = "README.md"
+keywords = []
+classifiers = []
+requires-python = ">=3.9, <4.0"
+dependencies = []
+
+[project.optional-dependencies]
+
+[dependency-groups]
+dev = [
+  "ruff >=0.12.0, <0.13.0",
+  "nonemoji >=0.1.2, <0.2.0",
+  "pre-commit >=4.0.0, <5.0.0",
+]
+
+[project.urls]
+Homepage = ""
+Repository = ""
+Documentation = ""
+"Bug Tracker" = ""
+Changelog = ""
+Funding = ""
+
+[tool.uv]
+required-version = ">=0.8.0"
+
+[tool.uv.build-backend]
+module-root = ""
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.format]
+line-ending = "lf"
+
+[tool.ruff.lint]
+select = [
+  "F",     # Pyflakes
+  "W",     # pycodestyle warnings
+  "E",     # pycodestyle errors
+  "I",     # isort
+  "UP",    # pyupgrade
+  "ASYNC", # flake8-async
+  "B",     # flake8-bugbear
+  "C4",    # flake8-comprehensions
+  "T10",   # flake8-debugger
+  "T20",   # flake8-print
+  "PYI",   # flake8-pyi
+  "PT",    # flake8-pytest-style
+  "Q",     # flake8-quotes
+  "SIM",   # flake8-simplify
+  "TID",   # flake8-tidy-imports
+  "RUF",   # Ruff-specific rules
+]
+ignore = [
+  "E402",   # module-import-not-at-top-of-file
+  "B008",   # function-call-in-default-argument
+  "RUF001", # ambiguous-unicode-character-string
+  "RUF002", # ambiguous-unicode-character-docstring
+  "RUF003", # ambiguous-unicode-character-comment
+]
+
+[tool.ruff.lint.isort]
+force-sort-within-sections = true
+extra-standard-library = ["typing_extensions"]
+
+[tool.ruff.lint.flake8-pytest-style]
+fixture-parentheses = false
+mark-parentheses = false
+
+[tool.ruff.lint.pyupgrade]
+keep-runtime-typing = true
+
+[tool.pyright]
+pythonVersion = "3.9"
+pythonPlatform = "All"
+
+typeCheckingMode = "standard"
+reportPrivateImportUsage = false
+reportShadowedImports = false
+disableBytesTypePromotions = true
+
+[build-system]
+requires = ["uv_build >=0.8.3, <0.9.0"]
+build-backend = "uv_build"
